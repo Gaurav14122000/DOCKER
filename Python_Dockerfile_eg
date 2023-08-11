@@ -1,0 +1,17 @@
+# Use the official Python image
+FROM python:3.8
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY app.py .
+
+# Install the required Python packages
+RUN pip install Flask
+
+# Expose the Flask app port
+EXPOSE 5000
+
+# Run the Flask app when the container starts
+CMD ["python", "app.py"]
