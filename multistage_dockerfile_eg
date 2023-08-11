@@ -1,0 +1,17 @@
+#stage 2
+# name the form as bigstage
+FROM python:3.8 AS big-stage
+
+WORKDIR /app
+
+COPY . .
+
+# stage 1
+FROM python:3.9-slim-bullseye
+
+# copy the app in your app
+COPY --from=big-stage /app /app
+
+RUN pip install Flask
+
+CMD ["python", "app.py"]
