@@ -8,7 +8,7 @@ docker run -d --mount source=gaurav-app-volume,traget=/data -p 8000:8000 gaurav.
 
 
 
-#to create volume
-#to list the volume
-#to create volume and give name to the volume , path , and bind the changes to local to main
-#mount with the container
+# to create volume
+# to list the volume
+# to create volume and give name to the volume , path , and bind the changes to local to main
+# mount with the container
