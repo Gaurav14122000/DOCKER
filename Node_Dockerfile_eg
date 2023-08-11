@@ -1,0 +1,20 @@
+# Use the official node image
+FROM node:12.2.0-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY . .
+
+# Install the required node packages
+RUN npm install
+
+# run test cases
+RUN nup run test
+
+# Expose the node app port
+EXPOSE 8000
+
+# Run the node app when the container starts
+CMD ["node", "app.js"]
