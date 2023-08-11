@@ -1,0 +1,14 @@
+# Use an official Java runtime as the base image
+FROM openjdk:11-jre-slim
+
+# Folder/working directory were the code will be kept
+WORKDIR /app
+
+# Copy the java app to the current directory
+COPY hello.java . 
+
+# Compile the Java code / c is the java compiler
+RUN javac HelloWorld.java
+
+# Run the Java program when the container starts / you can put classname or file
+CMD ["java", "HelloWorld"]
